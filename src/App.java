@@ -1,11 +1,12 @@
+import main.Ejercicio3_ListaLevels.Levels;
 import main.Materia.Controllers.ArbolBinario;
 import main.Materia.Controllers.ArbolRecorrido;
-
 public class App {
     public static void main(String[] args) throws Exception {
-        runArbolBinario();
+       /*  runArbolBinario();
         preOrderIperativo();
-        preOrderRecursivo();
+        preOrderRecursivo();*/
+        runejercicio3();
     }
 
     public static void runArbolBinario() {
@@ -51,6 +52,21 @@ public class App {
         arbolRecorrido.inOrder(arbolBinario.getRoot());
     }
     
-
-
+    public static void runejercicio3() {
+        // Crear un árbol binario
+        ArbolBinario arbolBinario = new ArbolBinario();
+        Levels levels = new Levels();
+    
+        // Insertar valores
+        int[] valores = {4, 2, 7, 1, 3, 6, 9};
+        for (int valor : valores) {
+            arbolBinario.insert(valor);
+        }
+    
+        // Imprimir niveles en el formato solicitado
+        System.out.println("Niveles del árbol:");
+        levels.printLevels(arbolBinario.getRoot());
+    }
+    
+    
 }
