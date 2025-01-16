@@ -6,7 +6,6 @@ import main.Materia.Models.Node;
 public class ArbolRecorrido {
     public void preOrderIterativo(Node root) 
     {
-        // Verificar si no esta vacio
         if (root == null){
             return;
     }
