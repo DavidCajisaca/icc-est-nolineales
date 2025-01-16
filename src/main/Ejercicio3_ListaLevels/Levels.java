@@ -41,16 +41,14 @@ public class Levels {
     public void printLevels(Node root) {
         List<List<Node>> levels = listLevels(root);
 
-        int levelSpacing = 4; // Espaciado entre los nodos de diferentes niveles
+        int levelSpacing = 4; 
         for (int i = 0; i < levels.size(); i++) {
             List<Node> level = levels.get(i);
 
-            // Imprimir los espacios antes de los nodos
             StringBuilder levelOutput = new StringBuilder();
-            int spaces = (int) Math.pow(2, levels.size() - i - 1) * levelSpacing; // Espacios dinámicos
+            int spaces = (int) Math.pow(2, levels.size() - i - 1) * levelSpacing; 
 
             for (Node node : level) {
-                // Agregar los espacios entre los nodos
                 levelOutput.append(" ".repeat(spaces));
                 levelOutput.append(node.getValue());
                 levelOutput.append(" ".repeat(spaces));

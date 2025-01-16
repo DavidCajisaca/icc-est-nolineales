@@ -7,8 +7,8 @@ public class maxDepth {
         if (root == null) {
             return 0;
         }
-        int leftDepth = maxDepth(root.getLeft());  //profundidad del subárbol izquierdo
-        int rightDepth = maxDepth(root.getRight());  //profundidad del subárbol derecho
+        int leftDepth = maxDepth(root.getLeft());  
+        int rightDepth = maxDepth(root.getRight());  
         return Math.max(leftDepth, rightDepth) + 1;  
     }
 }
