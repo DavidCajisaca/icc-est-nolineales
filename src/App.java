@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Queue;
 import main.Ejercicio3_ListaLevels.Levels;
 import main.Materia.Controllers.ArbolBinario;
+import main.Materia.Controllers.Graph;
 import main.Materia.Models.Node;
+import main.Materia.Models.NodeG;
 import main.ejercicio_02_invert.invertTree;
 import main.ejercicio_04_depth.maxDepth;
 
@@ -19,6 +21,7 @@ public class App {
         runEjercicio3();
         System.out.println("\n---------- EJERCICIO 4 ----------");
         runEjercicio4();
+        rungraph();
     }
 
     public static void runEjercicio1() {
@@ -167,4 +170,24 @@ public static void printLevels(Node root) {
         int maxDepth = depthHelper.maxDepth(arbolBinario.getRoot());
         System.out.println("La profundidad máxima del árbol binario es: " + maxDepth);
     }
+    private static void rungraph() {
+    Graph grafo = new Graph();
+
+    // Add nodes
+    grafo.addNodeg(5);
+    grafo.addNodeg(7);
+    grafo.addNodeg(9);
+    grafo.addNodeg(11);
+    grafo.addNodeg(3);
+
+    NodeG node5 = grafo.getNodeByValue(5);
+    NodeG node3 = grafo.getNodeByValue(3);
+
+    if (node5 != null && node3 != null) {
+        grafo.addEdge(node5, node3);
+    }
+
+    grafo.printGraph();
+}
+
 }
