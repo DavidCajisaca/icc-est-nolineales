@@ -22,6 +22,8 @@ public class App {
         System.out.println("\n---------- EJERCICIO 4 ----------");
         runEjercicio4();
         rungraph();
+        rungraphdiri();
+        rungraphejercicio();
     }
 
     public static void runEjercicio1() {
@@ -173,21 +175,71 @@ public static void printLevels(Node root) {
     private static void rungraph() {
     Graph grafo = new Graph();
 
-    // Add nodes
-    grafo.addNodeg(5);
-    grafo.addNodeg(7);
-    grafo.addNodeg(9);
-    grafo.addNodeg(11);
-    grafo.addNodeg(3);
-
-    NodeG node5 = grafo.getNodeByValue(5);
-    NodeG node3 = grafo.getNodeByValue(3);
-
-    if (node5 != null && node3 != null) {
-        grafo.addEdge(node5, node3);
-    }
-
+    NodeG node1 =grafo.addNodeg(1);
+    NodeG node2 =grafo.addNodeg(2);
+    NodeG node3 =grafo.addNodeg(3);
+    NodeG node4 =grafo.addNodeg(4);
+    NodeG node5 =grafo.addNodeg(5);
+    grafo.addDirectedEdge(node1, node2);
+    grafo.addDirectedEdge(node1, node3);
+    grafo.addDirectedEdge(node2, node4);
+    grafo.addDirectedEdge(node3, node2);
+    grafo.addDirectedEdge(node4, node5);
+    System.out.println("Nodos del grafo :");
     grafo.printGraph();
+    grafo.getDFS(node1);
+    grafo.getBFS(node1);
+    
+    
 }
+//Grafo dirigido
+ private static void rungraphdiri(){
+    System.out.println("Grafo dirigido");
+    Graph grafo = new Graph();
+    NodeG node1 =grafo.addNodeg(0);
+    NodeG node2 =grafo.addNodeg(1);
+    NodeG node3 =grafo.addNodeg(2);
+    NodeG node4 =grafo.addNodeg(3);
+    NodeG node5 =grafo.addNodeg(4);
+    NodeG node6 =grafo.addNodeg(5);
+    grafo.addDirectedEdge(node1, node5);
+    grafo.addDirectedEdge(node1, node3);
+    grafo.addDirectedEdge(node2, node4);
+    grafo.addDirectedEdge(node3, node2);
+    grafo.addDirectedEdge(node4, node6);
+    System.out.println("Nodos del grafo dirigido:");
+    grafo.printGraph();
+    grafo.getDFS(node1);
+    grafo.getBFS(node1);
+    
+ }
+ private static void rungraphejercicio(){
+    Graph grafo = new Graph();
+    NodeG node1 = grafo.addNodeg(1);
+    NodeG node2 = grafo.addNodeg(2);
+    NodeG node3 = grafo.addNodeg(3);
+    NodeG node4=grafo.addNodeg(4);
+    NodeG node5= grafo.addNodeg(6);
+    NodeG node6= grafo.addNodeg(7);
+    NodeG node7= grafo.addNodeg(8);
+    NodeG node8= grafo.addNodeg(9);
 
+    grafo.addEdge(node1, node5);
+    grafo.addEdge(node1, node4);
+    grafo.addEdge(node1, node2);
+    grafo.addEdge(node1, node3);
+    grafo.addEdge(node2, node5);
+    grafo.addEdge(node3, node6);
+    grafo.addEdge(node4, node7);
+    grafo.addEdge(node5, node6);
+    grafo.addEdge(node6, node7);
+    grafo.addEdge(node7, node8);
+    
+
+
+    System.out.println("Nodos del grafo :");
+    grafo.printGraph();
+    grafo.getDFS1(node1, node8);
+
+ }
 }
